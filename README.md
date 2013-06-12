@@ -1,10 +1,11 @@
-## Parse Wiki Infobox
+##  Wiki Infobox Fetcher
 
-This is a library that helps to parse MediaWiki template parameters.
-
-Such as Wikipedia's infoboxes or SNPedia's genotypes
+This is a library that helps to parse MediaWiki template parameters,
+such as Wikipedia's infoboxes or SNPedia's genotypes or any other MediaWiki template.
 
 ## Examples of usage
+
+SNPedia:
 
     var domain = 'bots.SNPedia.com',
         templateName = 'genotype',
@@ -12,6 +13,8 @@ Such as Wikipedia's infoboxes or SNPedia's genotypes
     Wiki.getTemplate(domain, templateName, pageTitle, function (template) {
       console.log(JSON.stringify(template));
     });
+
+English Wikipedia:
 
     WikipediaEn.getInfobox('The Social Network', function (movie) {
       console.log(JSON.stringify(movie));
