@@ -8,9 +8,10 @@ if(typeof(String.prototype.trim) === "undefined")
     };
 }
 
-var Wiki = {}, WikipediaEn = {};
+var Wiki = {}, WikipediaEn = {}, SNPedia = {};
 window.Wiki = Wiki;
 window.WikipediaEn = WikipediaEn;
+window.SNPedia = SNPedia;
 
 Wiki.displayInfoBox = function (domain, templateName, pageName) {
   Wiki.getTemplate(domain, templateName, pageName, function (infobox) {
@@ -21,6 +22,14 @@ Wiki.displayInfoBox = function (domain, templateName, pageName) {
 
 WikipediaEn.getInfobox = function (pageTitle, cb) {
   Wiki.getTemplate('en.wikipedia.org/w', 'infobox', pageTitle, cb);
+}
+
+SNPedia.getGenotype = function (pageTitle, cb) {
+  Wiki.getTemplate('bots.SNPedia.com', 'genotype', pageTitle, cb);
+}
+
+SNPedia.getRsNum = function (pageTitle, cb) {
+  Wiki.getTemplate('bots.SNPedia.com', 'rsnum', pageTitle, cb);
 }
 
 Wiki.getTemplate = function (domain, templateName, pageName, cb) {
