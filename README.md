@@ -10,8 +10,8 @@ SNPedia:
     var domain = 'bots.SNPedia.com',
         templateName = 'genotype',
         pageTitle = 'Rs1234(A;A)';
-    Wiki.getTemplate(domain, templateName, pageTitle, function (template) {
-      console.log(JSON.stringify(template));
+    Wiki.getTemplate(domain, templateName, pageTitle, function (template_data) {
+      console.log(JSON.stringify(template_data));
     });
 
 English Wikipedia:
